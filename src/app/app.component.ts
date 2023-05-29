@@ -61,5 +61,8 @@ export class AppComponent {
     const componentInstance = await component();
     const componentRef: ComponentRef<WidgetComponent> = this.container.createComponent(componentInstance);
     componentRef.instance.configOptions = inputs;
+    componentRef.instance.messageEvent.subscribe((data:any)=>{
+      console.log(data);
+    })
   }
 }
